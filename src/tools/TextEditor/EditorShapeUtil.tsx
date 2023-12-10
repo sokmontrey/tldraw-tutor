@@ -42,6 +42,7 @@ export class EditorShapeUtil extends ShapeUtil<ICardShape> {
   // Render method — the React component that will be rendered for the shape
   component(shape: ICardShape) {
     const theme = getDefaultColorTheme({ isDarkMode: true });
+    const [value, setValue] = useState(``);
 
     return (
       <HTMLContainer
@@ -56,7 +57,7 @@ export class EditorShapeUtil extends ShapeUtil<ICardShape> {
           color: theme[shape.props.color].solid,
         }}
       >
-        <Editor />
+        <Editor value={value} setValue={setValue} />
       </HTMLContainer>
     );
   }

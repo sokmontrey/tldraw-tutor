@@ -9,8 +9,7 @@ import { vim } from "@replit/codemirror-vim";
 
 const extensions = [python(), javascript(), vim()];
 
-export default function Editor() {
-  const [value, setValue] = useState(``);
+export default function Editor({ value, setValue }) {
   const onChange = useCallback((val) => {
     setValue(val);
   }, []);
